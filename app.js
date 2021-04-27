@@ -2,6 +2,7 @@ const postmanRequest = require('postman-request');
 const forecast = require('./utils.js');
 const express = require('express');
 
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.get('', (req, res) => {
@@ -13,7 +14,7 @@ app.get('/another', (req, res) => {
     res.send('fungujeeee');
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('this app listen up on port 3000');
 })
 
