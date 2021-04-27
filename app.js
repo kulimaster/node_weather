@@ -1,5 +1,25 @@
 const postmanRequest = require('postman-request');
-const forecast = require('./utils.js')
+const forecast = require('./utils.js');
+const express = require('express');
+
+const app = express();
+
+app.get('', (req, res) => {
+    res.send('Hello world');
+})
+
+app.get('/another', (req, res) => {
+    console.log('funguje i v consoli');
+    res.send('fungujeeee');
+})
+
+app.listen(3000, () => {
+    console.log('this app listen up on port 3000');
+})
+
+
+
+
 
 
 
@@ -11,7 +31,7 @@ const forecast = require('./utils.js')
 //     console.log(`delka ${center[0]} sirka ${center[1]}`);
 // } )
 
-forecast(-75.7088, 44.1545, (error, data) => {
-    console.log('Error', error)
-    console.log('Data', data)
-})
+// forecast(-75.7088, 44.1545, (error, data) => {
+//     console.log('Error', error)
+//     console.log('Data', data)
+// })
